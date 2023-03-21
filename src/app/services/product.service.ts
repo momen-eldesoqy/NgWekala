@@ -38,4 +38,8 @@ export class ProductService {
   getBestSelling():Observable<any>{
     return this._HttpClient.get(`https://localhost:7179/api/Product/BestSelling`)
   }
+
+  getProductImages(id:number):Observable<any>{
+    return this._HttpClient.get(`https://localhost:7179/api/Product/image/${id}`)
+  }
 }

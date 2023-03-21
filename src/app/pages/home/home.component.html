@@ -5,23 +5,8 @@
     <div class="col-lg-9 order-1 order-lg-2">
         <div class="masonry-loader masonry-loader-showing">
             <div class="row products product-thumb-info-list" data-plugin-masonry data-plugin-options="{'layoutMode': 'fitRows'}">
-                <div class="col-sm-6 col-lg-4">
-                    <app-product-item></app-product-item>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <app-product-item></app-product-item>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <app-product-item></app-product-item>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <app-product-item></app-product-item>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <app-product-item></app-product-item>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <app-product-item></app-product-item>
+                <div class="col-sm-6 col-lg-4" *ngFor="let product of Products">
+                    <app-product-item [id]="product.id"></app-product-item>
                 </div>
             </div>
         </div>
