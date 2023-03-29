@@ -15,3 +15,12 @@ export class Order {
     orderItems: OrderItem[] = [] ;
     total: number = 0 ;
 }
+
+export interface IorderDto{
+  "cartId": string,
+  "deliveryMethodId": number,
+  "shipTo_Name": string,
+  "shipTo_Street": string,
+  "shipTo_City": string,
+  "shipTo_Country": string
+}

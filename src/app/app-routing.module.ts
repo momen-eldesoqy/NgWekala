@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes , RouterModule } from '@angular/router';
+import { RouterModule, Routes  } from '@angular/router';
 import { ProductComponent } from './pages/product/product.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -20,6 +20,10 @@ import { AdminEditProductComponent } from './admin/admin-edit-product/admin-edit
 import { AdminCreateStoreComponent } from './admin/admin-create-store/admin-create-store.component';
 import { AdminDeliveryMethodsComponent } from './admin/admin-delivery-methods/admin-delivery-methods.component';
 import { AdminCreateDeliveryMethodsComponent } from './admin/admin-create-delivery-methods/admin-create-delivery-methods.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { OrderCompletedComponent } from './pages/order-completed/order-completed.component';
+import { LoginGuard } from './guards/login.guard';
 
 
 const routes : Routes = [
@@ -58,6 +62,39 @@ const routes : Routes = [
       {path:"categories/edit/:id",component:AdminEditCategoryComponent},
 
     ]
+    // path:"",
+    // redirectTo:"/home",
+    // pathMatch:"full"
+  },
+  {
+    path : "home" ,
+    component : HomeComponent
+  },
+  {
+    path : "login",
+    component : LoginComponent
+  },
+  {
+    path: "product",
+    component : ProductComponent
+  },
+  {
+    path: "cart",
+    component : CartComponent
+  },
+  {
+    path: "checkout",
+    component: CheckoutComponent,
+    canActivate:[LoginGuard]
+  },
+  {
+    path: "order",
+    component: OrderCompletedComponent,
+    canActivate:[LoginGuard]
+  },
+  {
+    path: "login",
+    component: LoginComponent
   }
 ]
 

@@ -8,6 +8,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SharedModule } from '../shared/shared.module';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -26,6 +28,9 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
   imports: [
     CommonModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports : [
     PromoComponent,

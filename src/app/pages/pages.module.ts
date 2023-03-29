@@ -19,6 +19,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from '../core/core.module';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -49,7 +50,11 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     CoreModule ,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CoreModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports : [
     ProductComponent,

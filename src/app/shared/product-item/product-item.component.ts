@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -9,8 +9,11 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductItemComponent implements OnInit {
   
   @Input() id:number = 1;
+  @Output() productImg = new EventEmitter<any>();
+  
   productImgs:Array<any> = [];
   product:any;
+  cartIds:Array<number> = [];
 
   constructor(private _service:ProductService) { }
 
@@ -36,6 +39,10 @@ export class ProductItemComponent implements OnInit {
         console.log(error)
       }
     })
+  }
+
+  addToCart(){
+    this.productImg.emit(this.productImgs[0].pro_Img);
   }
 
   ngOnInit(): void {

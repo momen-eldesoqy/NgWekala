@@ -11,3 +11,8 @@ export class User {
                 public password:string = "" )
         {}
 }
+
+export interface ILogin{
+    "email": string,
+    "password":string
+}
