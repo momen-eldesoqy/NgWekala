@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="col mt-5">
+        <div class="card border-width-3 border-radius-0 border-color-hover-dark mb-4">
+            <div class="card-body">
+                <h4 class="font-weight-bold text-uppercase text-4 mb-3">{{ product.name }}</h4>
+                <p class="">{{ product.description }}</p>
+                <table class="shop_table cart-totals mb-0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong class="d-block text-color-dark line-height-1 font-weight-semibold">price</strong>
+                            </td>
+                            <td class="text-end align-top">
+                                <span class="amount font-weight-medium text-color-grey">${{ product.price }}</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="border-top-0 pt-0">
+                                <strong class="d-block text-color-dark line-height-1 font-weight-semibold">Quantity</strong>
+                                
+                            </td>
+                            <td class="border-top-0 text-end align-top pt-0">
+                                <span class="amount font-weight-medium text-color-grey">{{ product.quantity }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border-top-0 pt-0">
+                                <strong class="d-block text-color-dark line-height-1 font-weight-semibold">Brand</strong>
+                                
+                            </td>
+                            <td class="border-top-0 text-end align-top pt-0">
+                                <span class="amount font-weight-medium text-color-grey">{{ product.brandName }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border-top-0 pt-0">
+                                <strong class="d-block text-color-dark line-height-1 font-weight-semibold">Gategory</strong>
+                                
+                            </td>
+                            <td class="border-top-0 text-end align-top pt-0">
+                                <span class="amount font-weight-medium text-color-grey">{{ product.categoryName }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border-top-0 pt-0">
+                                <strong class="d-block text-color-dark line-height-1 font-weight-semibold">Store</strong>
+                                
+                            </td>
+                            <td class="border-top-0 text-end align-top pt-0">
+                                <span class="amount font-weight-medium text-color-grey">{{ product.storeName }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border-top-0 pt-0">
+                                <strong class="d-block text-color-dark line-height-1 font-weight-semibold">Promo</strong>
+                                
+                            </td>
+                            <td class="border-top-0 text-end align-top pt-0">
+                                <span class="amount font-weight-medium text-color-grey">{{ product.promotionalText ? product.promotionalText: "NA" }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border-top-0 pt-0">
+                                <strong class="d-block text-color-dark line-height-1 font-weight-semibold">New price</strong>
+                                
+                            </td>
+                            <td class="border-top-0 text-end align-top pt-0">
+                                <span class="amount font-weight-medium text-color-grey">{{ product.newPrice ? product.newPrice : "NA" }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border-top-0 pt-0">
+                                <strong class="d-block text-color-dark line-height-1 font-weight-semibold">Reviews</strong>
+                                
+                            </td>
+                            <td class="border-top-0 text-end align-top pt-0">
+                                <span class="amount font-weight-medium text-color-grey">{{ product.reviews.length}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

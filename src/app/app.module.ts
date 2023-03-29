@@ -6,10 +6,14 @@ import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminModule } from './admin/admin.module';
+import { SiteLayoutComponent } from './site-layout.component'
 
 @NgModule({
   declarations: [
     AppComponent,
+    SiteLayoutComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -17,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     PagesModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

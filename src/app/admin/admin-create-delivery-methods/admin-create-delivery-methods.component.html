@@ -1,0 +1,35 @@
+<div class="row mt-5">
+    <div class="col-md-10">
+        <form [formGroup]="registerData" (ngSubmit)="add()">
+            <input type="hidden" formControlName="deliveryTime">
+
+            <div class="form-group col-12">
+                <label class="form-label text-color-dark text-3">Name<span class="text-color-danger">*</span></label>
+                <input type="text" class="form-control form-control-lg text-4" formControlName="name">
+                <div *ngIf="registerData.controls['name'].invalid && registerData.controls['name'].touched" class="text-danger d-flex pt-2">
+                    <p *ngIf="registerData.controls['name'].errors?.['required']" class="pe-3 m-0">Please enter the name.</p>
+                 </div>
+            </div>
+            <div class="form-group col-12">
+                <label class="form-label text-color-dark text-3">Cost<span class="text-color-danger">*</span></label>
+                <input type="text" class="form-control form-control-lg text-4" formControlName="cost">
+                <div *ngIf="registerData.controls['cost'].invalid && registerData.controls['cost'].touched" class="text-danger d-flex pt-2">
+                    <p *ngIf="registerData.controls['cost'].errors?.['required']" class="pe-3 m-0">Please enter the cost.</p>
+                    <p *ngIf="registerData.controls['cost'].errors?.['pattern']" class="pe-3 m-0">cost must be number .</p>
+                 </div>
+            </div>
+            <div class="form-group col-12">
+                <label class="form-label text-color-dark text-3">Description<span class="text-color-danger">*</span></label>
+                <input type="text" class="form-control form-control-lg text-4" formControlName="description">
+                <div *ngIf="registerData.controls['description'].invalid && registerData.controls['description'].touched" class="text-danger d-flex pt-2">
+                    <p *ngIf="registerData.controls['description'].errors?.['required']" class="pe-3 m-0">Please enter the description.</p>
+                 </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success" [disabled] ='registerData.invalid && registerData.touched' >Add</button>
+            </div>
+        </form>
+        
+    </div>
+
+</div>

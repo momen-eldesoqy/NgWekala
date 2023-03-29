@@ -1,0 +1,31 @@
+
+<h2>All Delivery Methods</h2>
+<div class="row">
+    <div class="col">
+        <button class="btn btn-primary" routerLink="/admin/deliveryMethods/create">New <i class="fas fa-plus-circle"></i></button>
+    </div>
+</div>
+<div class="table-responsive">
+<table class="table table-striped table-sm">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Cost</th>
+        <th scope="col">ops</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let delivery of deliveryMethods">
+        <td>{{ delivery.name }}</td>
+        <td>{{ delivery.description }}</td>
+        <td>{{ delivery.cost }}</td>
+        <td>
+            <!--routerLink="/admin/products/edit/{{cat.id}}"-->
+
+            <i class="fas fa-trash-alt" (click)="deleteDeliveryMethod(delivery)"></i>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>

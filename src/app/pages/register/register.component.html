@@ -1,17 +1,92 @@
 <div class="row justify-content-center">
     <div class="col-md-10">
         <h2 class="font-weight-bold text-5 mb-0">Register</h2>
-        <form action="https://www.okler.net/" id="frmSignUp" method="post">
+        <form [formGroup]="registerData" (ngSubmit)="registerValue()" id="frmSignUp"  >
             <div class="row">
-                <div class="form-group col">
-                    <label class="form-label text-color-dark text-3">Username or email address <span class="text-color-danger">*</span></label>
-                    <input type="text" value="" class="form-control form-control-lg text-4" required>
+                <div class="form-group col-6">
+                    <label class="form-label text-color-dark text-3">First name<span class="text-color-danger">*</span></label>
+                    <input type="text" class="form-control form-control-lg text-4" formControlName="firstName">
+                    <div *ngIf="registerData.controls['firstName'].invalid && registerData.controls['firstName'].touched" class="text-danger d-flex pt-2">
+                        <p *ngIf="registerData.controls['firstName'].errors?.['required']" class="pe-3 m-0">Please enter your first name.</p>
+                        <p *ngIf="registerData.controls['firstName'].errors?.['pattern']" class="pe-3 m-0">Please start with capital letter.</p>
+                        
+                     </div>
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label text-color-dark text-3">Last name<span class="text-color-danger">*</span></label>
+                    <input type="text" value="" class="form-control form-control-lg text-4" formControlName="lastName">
+                    
+                    <div *ngIf="registerData.controls['lastName'].invalid && registerData.controls['lastName'].touched" class="text-danger d-flex pt-2">
+                        <p *ngIf="registerData.controls['lastName'].errors?.['required']" class="pe-3 m-0">Please enter your last name.</p>
+                        <p *ngIf="registerData.controls['lastName'].errors?.['pattern']" class="pe-3 m-0">Please start with capital letter.</p>
+                        
+                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col">
+                    <label class="form-label text-color-dark text-3">Email<span class="text-color-danger">*</span></label>
+                    <input type="text" value="" class="form-control form-control-lg text-4" formControlName="email">
+                    <div *ngIf="registerData.controls['email'].invalid && registerData.controls['email'].touched" class="text-danger d-flex pt-2">
+                        <p *ngIf="registerData.controls['email'].errors?.['required']" class="pe-3 m-0">Please enter your email.</p>
+                        <p *ngIf="registerData.controls['email'].errors?.['email']" class="pe-3 m-0">Enter valid email.</p>
+                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label class="form-label text-color-dark text-3">Phone Number<span class="text-color-danger">*</span></label>
+                    <input type="text" value="" class="form-control form-control-lg text-4" formControlName="phoneNumber">
+                    
+                    <div *ngIf="registerData.controls['phoneNumber'].invalid && registerData.controls['phoneNumber'].touched" class="text-danger d-flex pt-2">
+                        <p *ngIf="registerData.controls['phoneNumber'].errors?.['required']" class="pe-3 m-0">Please enter your phone number.</p>
+                        <p *ngIf="registerData.controls['phoneNumber'].errors?.['pattern']" class="pe-3 m-0">phone number must be number</p>
+                        <p *ngIf="registerData.controls['phoneNumber'].errors?.['minLength']" class="pe-3 m-0">phone number must be or above.</p>
+                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-4">
+                    <label class="form-label text-color-dark text-3">Street<span class="text-color-danger">*</span></label>
+                    <input type="text" value="" class="form-control form-control-lg text-4" formControlName="street">
+                </div>
+                <div class="form-group col-4">
+                    <label class="form-label text-color-dark text-3">City<span class="text-color-danger">*</span></label>
+                    <input type="text" value="" class="form-control form-control-lg text-4" formControlName="city">
+                </div>
+                <div class="form-group col-4">
+                    <label class="form-label text-color-dark text-3">Countery<span class="text-color-danger">*</span></label>
+                    <input type="text" value="" class="form-control form-control-lg text-4" formControlName="country">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label class="form-label">Identity</label>
+                    <div class="custom-select-1">
+                          <select class="form-select form-control h-auto py-2" formControlName="userType">
+                            <option value="User">User</option>
+                            <option value="Supplier">Supplier</option>
+                            <option value="Admin">Admin</option>
+                          </select>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
                     <label class="form-label text-color-dark text-3">Password <span class="text-color-danger">*</span></label>
-                    <input type="password" value="" class="form-control form-control-lg text-4" required>
+                    <input type="password" class="form-control form-control-lg text-4" formControlName="password">
+
+                    <div *ngIf="registerData.controls['password'].invalid && registerData.controls['password'].touched" class="text-danger d-flex pt-2">
+                        <p *ngIf="registerData.controls['password'].errors?.['required']" class="pe-3 m-0">Please enter your password.</p>
+                        <p *ngIf="registerData.controls['password'].errors?.['minlength']" class="pe-3 m-0">Please at least insert {{registerData.controls['password'].errors?.['minlength'].requiredLength}}.</p>
+                    </div>
+                </div>
+
+                <div class="form-group col-6">
+                    <label class="form-label text-color-dark text-3">Confirm Password <span class="text-color-danger">*</span></label>
+                    <input type="password" value="" class="form-control form-control-lg text-4" >
+
+                    
                 </div>
             </div>
             <div class="row">
@@ -21,7 +96,7 @@
             </div>
             <div class="row">
                 <div class="form-group col">
-                    <button type="submit" class="btn btn-dark btn-modern w-100 text-uppercase rounded-0 font-weight-bold text-3 py-3" data-loading-text="Loading...">Register</button>
+                    <button type="submit" class="btn btn-dark btn-modern w-100 text-uppercase rounded-0 font-weight-bold text-3 py-3" [disabled] = 'registerData.invalid && registerData.touched'>Register</button>
                 </div>
             </div>
         </form>

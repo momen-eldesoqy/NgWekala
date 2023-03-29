@@ -33,7 +33,8 @@ import { CarouselModule  } from 'ngx-owl-carousel-o';
   ],
   imports: [
     CommonModule,
-    CarouselModule
+    CarouselModule,
+    
   ],
   exports : [
     TagsComponent,

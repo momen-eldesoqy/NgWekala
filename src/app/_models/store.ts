@@ -1,4 +1,28 @@
+
 export interface IStore {
+  id: number;
+  name: string;
+  description: string;
+  street: string;
+  city: string;
+  country: string;
+  supplier_Id: string;
+  products: [
+    {
+      id: number,
+      name: string,
+      descriptio: string,
+      price: number,
+      quantity: number,
+      brand_Id: number,
+      category_Id: number,
+      store_Id: number
+    }
+  ]
+
+}
+
+/*
     "id": number;
     "name": string;
     "description": string;
@@ -18,4 +42,6 @@ export interface IStore {
         "store_Id": number
       }
     ]
-}
+
+
+*/

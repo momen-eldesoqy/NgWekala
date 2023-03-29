@@ -39,6 +39,7 @@
               "src/assets/css/theme-blog.css",
               "src/assets/css/theme-shop.css",
               "src/assets/css/skins/default.css",
+              
               "src/styles.css"
             ],
             "scripts": [

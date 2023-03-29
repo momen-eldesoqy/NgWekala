@@ -11,6 +11,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 
 
+
 @NgModule({
   declarations: [
     PromoComponent,
@@ -19,7 +20,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     HeadtopComponent,
     SidebarComponent,
     FooterComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     SidebarComponent,
     FooterComponent,
     BreadcrumbComponent,
-    SidebarComponent
+    SidebarComponent,
+    
   ]
 })
 export class CoreModule { }
