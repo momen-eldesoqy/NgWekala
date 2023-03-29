@@ -24,6 +24,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { OrderCompletedComponent } from './pages/order-completed/order-completed.component';
 import { LoginGuard } from './guards/login.guard';
+import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 
 
 const routes : Routes = [
@@ -36,6 +37,9 @@ const routes : Routes = [
       {path:"login",component : LoginComponent },
       {path:"product/:id",component : ProductComponent },
       {path:"register",component : RegisterComponent },
+      {path:"cart",component : CartComponent},
+      {path:"checkout",component: CheckoutComponent,canActivate:[LoginGuard]},
+      {path:"order",component: OrderCompletedComponent,canActivate:[LoginGuard]}
     ]
   },
   {
@@ -43,6 +47,7 @@ const routes : Routes = [
     component:AdminComponent,
     children:[
       {path:"products",component:AdminProductsComponent},
+      {path:"orders",component:AdminOrdersComponent},
       {path:"products/create",component:AdminCreateProductComponent},
       {path:"products/edit/:id",component:AdminEditProductComponent},
       {path:"products/:id",component:AdminProductDetailsComponent},
@@ -61,41 +66,8 @@ const routes : Routes = [
       {path:"categories/create",component:AdminCreateCategoryComponent},
       {path:"categories/edit/:id",component:AdminEditCategoryComponent},
 
-    ]
-    // path:"",
-    // redirectTo:"/home",
-    // pathMatch:"full"
+    ],canActivate:[LoginGuard]
   },
-  {
-    path : "home" ,
-    component : HomeComponent
-  },
-  {
-    path : "login",
-    component : LoginComponent
-  },
-  {
-    path: "product",
-    component : ProductComponent
-  },
-  {
-    path: "cart",
-    component : CartComponent
-  },
-  {
-    path: "checkout",
-    component: CheckoutComponent,
-    canActivate:[LoginGuard]
-  },
-  {
-    path: "order",
-    component: OrderCompletedComponent,
-    canActivate:[LoginGuard]
-  },
-  {
-    path: "login",
-    component: LoginComponent
-  }
 ]
 
 

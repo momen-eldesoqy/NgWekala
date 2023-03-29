@@ -54,7 +54,6 @@ export class CheckoutComponent implements OnInit {
           this._Router.navigate(['/order']);
         },
         error:(err)=>{
-          // this.isEmailExist = err.error
           console.log(err);
         }
       })
@@ -66,13 +65,11 @@ export class CheckoutComponent implements OnInit {
   getCart(id:string){
     this._cartService.getCart(id).subscribe({
       next:(resopnse)=>{
-        console.log(resopnse);
         this.cartItems = resopnse.items;
         //count total
         this.cartItems.forEach(element => {
             this.total += (element.product_Price * element.product_Quantity);
         });
-        console.log(this.total)
       },
       error:(error)=>{
         console.log(error)
@@ -81,10 +78,8 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("jgjjjgjfj")
     
     var CartId = localStorage.getItem("CartId");
-    console.log(CartId)
     if(CartId){
       this.getCart(CartId);
     }
