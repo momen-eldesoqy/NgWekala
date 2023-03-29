@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 
 
 
+
 @NgModule({
   declarations: [
     PromoComponent,
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
     HeadtopComponent,
     SidebarComponent,
     FooterComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ import { RouterModule } from '@angular/router';
     SidebarComponent,
     FooterComponent,
     BreadcrumbComponent,
-    SidebarComponent
+    SidebarComponent,
+    
   ]
 })
 export class CoreModule { }

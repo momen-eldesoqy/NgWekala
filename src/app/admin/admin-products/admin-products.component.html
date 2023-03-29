@@ -1,0 +1,43 @@
+
+<h2>All Products</h2>
+<div class="row">
+    <div class="col">
+        <button class="btn btn-primary" routerLink="/admin/products/create">New <i class="fas fa-plus-circle"></i></button>
+    </div>
+</div>
+<div class="table-responsive">
+<table class="table table-striped table-sm">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Brand Name</th>
+        <th scope="col">Store Name</th>
+        <th scope="col">new Price</th>
+        <th scope="col">promotional text</th>
+        <th scope="col">reviews</th>
+        <th scope="col">ops</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products" (click)="productDetails(product.id)">
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.brandName }}</td>
+        <td>{{ product.storeName }}</td>
+        <td>{{ product.newPrice ? product.newPrice : "NA" }}</td>
+        <td>{{ product.promotionalText ? product.promotionalText : "NA" }}</td>
+        <td>{{ product.reviews.length }}</td>
+        <td>
+            <!--routerLink="/admin/products/edit/{{cat.id}}"-->
+            <i class="far fa-edit" routerLink="/admin/products/edit/{{product.id}}"></i>
+            <i class="fas fa-trash-alt" (click)="deleteProduct(product.id)"></i>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>

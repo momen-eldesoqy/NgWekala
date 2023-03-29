@@ -18,7 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from '../core/core.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 
@@ -48,6 +48,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     SharedModule,
+    CoreModule ,
+    FormsModule,
+    ReactiveFormsModule,
     CoreModule,
     FormsModule,
     ReactiveFormsModule,
@@ -60,7 +63,9 @@ import { RouterModule } from '@angular/router';
     OrderCompletedComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    ProductDetailsComponent,
+    OrderBillComponent
   ]
 })
 export class PagesModule { }

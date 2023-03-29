@@ -1,0 +1,74 @@
+<div class="row mt-5">
+    <div class="col-md-10">
+        <form [formGroup]="registerData" (ngSubmit)="add()">
+
+            <div class="form-group col-12">
+                <label class="form-label text-color-dark text-3">Name<span class="text-color-danger">*</span></label>
+                <input type="text" class="form-control form-control-lg text-4" formControlName="name">
+                <div *ngIf="registerData.controls['name'].invalid && registerData.controls['name'].touched" class="text-danger d-flex pt-2">
+                    <p *ngIf="registerData.controls['name'].errors?.['required']" class="pe-3 m-0">Please enter store name.</p>
+                 </div>
+            </div>
+            <div class="row">
+
+                <div class="form-group col-4">
+                    <label class="form-label text-color-dark text-3">street<span class="text-color-danger">*</span></label>
+                    <input type="text" class="form-control form-control-lg text-4" formControlName="street">
+
+                    <div *ngIf="registerData.controls['street'].invalid && registerData.controls['street'].touched" class="text-danger d-flex pt-2">
+
+                        <p *ngIf="registerData.controls['street'].errors?.['required']" class="pe-3 m-0">
+                            Please enter store street
+                        </p>
+
+                    
+
+                     </div>
+                </div>
+    
+                <div class="form-group col-4">
+                    <label class="form-label text-color-dark text-3">city<span class="text-color-danger">*</span></label>
+                    <input type="text" class="form-control form-control-lg text-4" formControlName="city">
+
+                    <div *ngIf="registerData.controls['city'].invalid && registerData.controls['city'].touched" class="text-danger d-flex pt-2">
+
+                        <p *ngIf="registerData.controls['city'].errors?.['required']" class="pe-3 m-0">
+                            Please enter store city.
+                        </p>
+
+                       
+
+                     </div>
+                </div>
+
+                <div class="form-group col-4">
+                    <label class="form-label text-color-dark text-3">country<span class="text-color-danger">*</span></label>
+                    <input type="text" class="form-control form-control-lg text-4" formControlName="country">
+
+                    <div *ngIf="registerData.controls['country'].invalid && registerData.controls['country'].touched" class="text-danger d-flex pt-2">
+
+                        <p *ngIf="registerData.controls['country'].errors?.['required']" class="pe-3 m-0">
+                            Please enter store countery.
+                        </p>
+                     </div>
+                </div>
+            </div>
+
+            <input type="hidden" formControlName="supplier_Id">
+
+            <div class="form-group col-12">
+                <label class="form-label text-color-dark text-3">Description<span class="text-color-danger">*</span></label>
+                <textarea maxlength="5000" rows="8" class="form-control text-3 h-auto py-2" formControlName="description" ></textarea>
+                <div *ngIf="registerData.controls['description'].invalid && registerData.controls['description'].touched" class="text-danger d-flex pt-2">
+                    <p *ngIf="registerData.controls['description'].errors?.['required']" class="pe-3 m-0">Please enter store description.</p>
+                 </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-success" [disabled] ='registerData.invalid && registerData.touched' >Add</button>
+            </div>
+        </form>
+        
+    </div>
+
+</div>

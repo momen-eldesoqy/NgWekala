@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
 import { AppRoutingModule } from './app-routing.module';
+import { AdminModule } from './admin/admin.module';
+import { SiteLayoutComponent } from './site-layout.component'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InterceptorHandler } from './interceptor-handler';
@@ -13,6 +15,8 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
+    SiteLayoutComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -21,6 +25,8 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AdminModule,
+    
     ReactiveFormsModule,
     RouterModule
   ],

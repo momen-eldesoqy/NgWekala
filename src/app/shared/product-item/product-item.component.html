@@ -12,10 +12,11 @@
             </a>
         </div>
 
-        <a href="ajax/shop-product-quick-view.html" class="quick-view text-uppercase font-weight-semibold text-2">
+        <a href="/product/{{id}}" class="quick-view text-uppercase font-weight-semibold text-2">
             QUICK VIEW
         </a>
-        <a href="shop-product-sidebar-left.html">
+        
+        <a href="/product/{{id}}">
             <div class="product-thumb-info-image">
                 <img alt="" class="img-fluid" [src]="productImgs[0].pro_Img" *ngIf="productImgs.length > 0">
             </div>

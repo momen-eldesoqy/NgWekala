@@ -23,6 +23,9 @@ export class ProductService {
     return this._HttpClient.post(`https://localhost:7179/api/Product`,product)
   }
 
+  AddProductImg(product:IProduct):Observable<any>{
+    return this._HttpClient.post(`https://localhost:7179/api/Product`,product)
+  }
   updateProduct(id:number,product:IProduct):Observable<any>{
     return this._HttpClient.put(`https://localhost:7179/api/Product/${id}`,product)
   }
