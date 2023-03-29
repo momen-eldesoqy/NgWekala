@@ -82,8 +82,12 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("jgjjjgjfj")
-    var CartId = localStorage.getItem("CardId")!;
-    this.getCart(CartId);
+    
+    var CartId = localStorage.getItem("CartId");
+    console.log(CartId)
+    if(CartId){
+      this.getCart(CartId);
+    }
   }
 
 }
