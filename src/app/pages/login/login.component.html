@@ -1,17 +1,17 @@
 <div class="row justify-content-center">
     <div class="col-md-10  mb-5 mb-lg-0">
         <h2 class="font-weight-bold text-5 mb-0">Login</h2>
-        <form action="https://www.okler.net/" id="frmSignIn" method="post" class="needs-validation">
+        <form [formGroup]="loginData" (ngSubmit)="loginValue()" id="frmSignIn" class="needs-validation">
             <div class="row">
                 <div class="form-group col">
                     <label class="form-label text-color-dark text-3">Email address <span class="text-color-danger">*</span></label>
-                    <input type="text" value="" class="form-control form-control-lg text-4" required>
+                    <input type="text" formControlName="email" class="form-control form-control-lg text-4" required>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col">
                     <label class="form-label text-color-dark text-3">Password <span class="text-color-danger">*</span></label>
-                    <input type="password" value="" class="form-control form-control-lg text-4" required>
+                    <input type="password" formControlName="password" class="form-control form-control-lg text-4" required>
                 </div>
             </div>
             <div class="row justify-content-between">

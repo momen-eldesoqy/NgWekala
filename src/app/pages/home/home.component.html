@@ -6,7 +6,7 @@
         <div class="masonry-loader masonry-loader-showing">
             <div class="row products product-thumb-info-list" data-plugin-masonry data-plugin-options="{'layoutMode': 'fitRows'}">
                 <div class="col-sm-6 col-lg-4" *ngFor="let product of Products">
-                    <app-product-item [id]="product.id"></app-product-item>
+                    <app-product-item [id]="product.id" (productImg)="addToCart(product,$event)"></app-product-item>
                 </div>
             </div>
         </div>
