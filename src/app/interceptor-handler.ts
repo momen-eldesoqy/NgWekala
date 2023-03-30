@@ -6,7 +6,6 @@ export class InterceptorHandler implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler) {
 
-        console.log("hererf")
         request = request.clone({ headers: request.headers.set('Content-Type', 'application/json') });
         let token: string | null = localStorage.getItem("Token");
         if (token) {

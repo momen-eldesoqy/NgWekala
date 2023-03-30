@@ -13,4 +13,8 @@ export class OrderService {
   createOrder(orderDto:IorderDto):Observable<any>{
     return this._HttpClient.post(`https://localhost:7179/api/Order`,orderDto)
   }
+
+  GetOrders():Observable<any>{
+    return this._HttpClient.get(`https://localhost:7179/api/Order`)
+  }
 }

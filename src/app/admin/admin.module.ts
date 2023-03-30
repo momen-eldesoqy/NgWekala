@@ -20,6 +20,7 @@ import { AdminCreateStoreComponent } from './admin-create-store/admin-create-sto
 import { AdminDeliveryMethodsComponent } from './admin-delivery-methods/admin-delivery-methods.component';
 import { AdminCreateDeliveryMethodsComponent } from './admin-create-delivery-methods/admin-create-delivery-methods.component';
 import { AdminDeliveryMethodsDetailsComponent } from './admin-delivery-methods-details/admin-delivery-methods-details.component';
+import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 
 
 
@@ -43,6 +44,7 @@ import { AdminDeliveryMethodsDetailsComponent } from './admin-delivery-methods-d
     AdminDeliveryMethodsComponent,
     AdminCreateDeliveryMethodsComponent,
     AdminDeliveryMethodsDetailsComponent,
+    AdminOrdersComponent,
   ],
   imports: [
     CommonModule,
