@@ -11,5 +11,9 @@ export class BrandService {
 
     getAllBrands():Observable<any>{
         return this._HttpClient.get(`https://localhost:7179/api/Brand`)
-      }
+    }
+    getBrandById(id:number):Observable<any> {
+      return this._HttpClient.get(`https://localhost:7179/api/Brand/${id}`)
+    }
+    
 }

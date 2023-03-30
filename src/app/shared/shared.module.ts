@@ -13,6 +13,7 @@ import { RelatedProductsComponent } from './related-products/related-products.co
 import { TopRatedProductsComponent } from './top-rated-products/top-rated-products.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { CarouselModule  } from 'ngx-owl-carousel-o';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { CarouselModule  } from 'ngx-owl-carousel-o';
   imports: [
     CommonModule,
     CarouselModule,
+    FormsModule
     
   ],
   exports : [

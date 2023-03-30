@@ -15,21 +15,7 @@
 
 <div class="row mb-4">
     <div class="col">
-        <app-tabs></app-tabs>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <h4 class="font-weight-semibold text-4 mb-3">RELATED PRODUCTS</h4>
-        <hr class="mt-0">
-        <div class="products row">
-            <div class="col">
-                <div class="owl-carousel owl-theme nav-style-1 nav-outside nav-outside nav-dark mb-0" data-plugin-options="{'loop': false, 'autoplay': false, 'items': 4, 'nav': true, 'dots': false, 'margin': 20, 'autoplayHoverPause': true, 'autoHeight': true, 'stagePadding': '75', 'navVerticalOffset': '50px'}">
-                    <app-related-products></app-related-products>
-                </div>
-            </div>
-        </div>
+        <app-tabs [product]="product"></app-tabs>
     </div>
 </div>
 

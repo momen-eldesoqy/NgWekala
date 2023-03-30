@@ -8916,7 +8916,7 @@ if ($("[data-copy-to-clipboard]").length) {
               return;
             }
           }
-          $html.addClass("sticky-header-active");
+          $html.addClass("sticky-h15eader-active");
           if (self.options.stickyEffect == "reveal") {
             self.options.headerBody.css(
               "top",

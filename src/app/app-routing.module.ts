@@ -24,6 +24,10 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { OrderCompletedComponent } from './pages/order-completed/order-completed.component';
 import { LoginGuard } from './guards/login.guard';
+import { CategoryComponent } from './pages/category/category.component';
+import { BrandComponent } from './pages/brand/brand.component';
+import { StoreComponent } from './pages/store/store.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 
 const routes : Routes = [
@@ -35,7 +39,11 @@ const routes : Routes = [
       {path:"home" , component:HomeComponent },
       {path:"login",component : LoginComponent },
       {path:"product/:id",component : ProductComponent },
+      {path:"category/:id",component : CategoryComponent },
+      {path:"store/:id",component : StoreComponent },
+      {path:"brand/:id",component : BrandComponent },
       {path:"register",component : RegisterComponent },
+      {path:"**",component : NotfoundComponent },
     ]
   },
   {

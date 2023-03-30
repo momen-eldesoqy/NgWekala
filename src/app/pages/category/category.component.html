@@ -1,0 +1,34 @@
+<section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 align-self-center p-static order-2 text-center">
+                <h1 class="text-dark font-weight-bold text-8">{{cat.name}}</h1>
+                <span class="sub-title text-dark">{{cat.description}}</span>
+            </div>
+            <div class="col-md-12 align-self-center order-1">
+                <ul class="breadcrumb d-block text-center">
+                    <li><a routerLink="/home">Home</a></li>
+                    <li class="active">{{cat.name}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="row">
+    <div class="col-lg-12 order-1 order-lg-2" *ngIf="cat.products.length > 0 ; " >
+        <div class="masonry-loader masonry-loader-showing">
+            <div class="row products product-thumb-info-list" data-plugin-masonry data-plugin-options="{'layoutMode': 'fitRows'}">
+                <div class="col-sm-6 col-lg-3" *ngFor="let product of cat.products">
+                    <app-product-item [id]="product.id" (productImg)="addToCart(product,$event)"></app-product-item>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 text-center" *ngIf="cat.products.length == 0">
+        <div class="http-error-main">
+            <h2><i class="fas fa-store-alt-slash fa-3x"></i></h2>
+            <p>We're sorry, but we will provide products in this category soon .</p>
+        </div>
+    </div>
+</div>

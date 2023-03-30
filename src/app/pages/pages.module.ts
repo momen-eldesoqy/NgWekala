@@ -20,6 +20,10 @@ import { HomeComponent } from './home/home.component';
 import { CoreModule } from '../core/core.module';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { CategoryComponent } from './category/category.component';
+import { BrandComponent } from './brand/brand.component';
+import { StoreComponent } from './store/store.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 
 
@@ -43,6 +47,10 @@ import { RouterModule } from '@angular/router';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    CategoryComponent,
+    BrandComponent,
+    StoreComponent,
+    NotfoundComponent,
 
   ],
   imports: [

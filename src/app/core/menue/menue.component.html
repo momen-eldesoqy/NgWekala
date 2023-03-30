@@ -12,7 +12,7 @@
                             <nav class="collapse w-100">
                                 <ul class="nav nav-pills w-100" id="mainNav">
                                     <li class="dropdown dropdown-mega">
-                                        <a class="dropdown-item dropdown-toggle" href="elements.html">
+                                        <a class="dropdown-item dropdown-toggle" >
                                             Brands
                                         </a>
                                         <ul class="dropdown-menu">
@@ -23,8 +23,7 @@
                                                             <span class="dropdown-mega-sub-title">Top Brands</span>
                                                             <ul class="dropdown-mega-sub-nav">
                                                                 <li *ngFor="let brand of brands">
-                                                                    <a class="dropdown-item"
-                                                                        href="elements-accordions.html">
+                                                                    <a class="dropdown-item" routerLink="/brand/{{brand.id}}">
                                                                         {{brand.name}}
                                                                     </a>
                                                                 </li>
@@ -36,7 +35,7 @@
                                         </ul>
                                     </li>
                                     <li class="dropdown dropdown-mega">
-                                        <a class="dropdown-item dropdown-toggle" href="#">
+                                        <a class="dropdown-item dropdown-toggle">
                                             Stores
                                         </a>
                                         <ul class="dropdown-menu">
@@ -48,7 +47,7 @@
                                                             <ul class="dropdown-mega-sub-nav">
                                                                 <li *ngFor="let store of stores">
                                                                     <a class="dropdown-item"
-                                                                        href="elements-accordions.html">
+                                                                        href="/store/{{store.id}}">
                                                                         {{store.name}}
                                                                     </a>
                                                                 </li>
@@ -59,124 +58,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown">
-                                        <a class="dropdown-item dropdown-toggle" href="#">
-                                            Sellers
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li class="dropdown-submenu">
-                                                <a class="dropdown-item" href="#">Contact Us</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="contact-us-advanced.html">Contact
-                                                            Us - Advanced</a></li>
-                                                    <li><a class="dropdown-item" href="contact-us.html">Contact Us -
-                                                            Basic</a></li>
-                                                    <li><a class="dropdown-item"
-                                                            href="contact-us-recaptcha.html">Contact Us - Recaptcha</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown-submenu">
-                                                <a class="dropdown-item" href="#">About Us</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="about-us-advanced.html">About Us
-                                                            - Advanced</a></li>
-                                                    <li><a class="dropdown-item" href="about-us.html">About Us -
-                                                            Basic</a></li>
-                                                    <li><a class="dropdown-item" href="about-me.html">About Me</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown-submenu">
-                                                <a class="dropdown-item" href="#">Layouts</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="page-full-width.html">Full
-                                                            Width</a></li>
-                                                    <li><a class="dropdown-item" href="page-left-sidebar.html">Left
-                                                            Sidebar</a></li>
-                                                    <li><a class="dropdown-item" href="page-right-sidebar.html">Right
-                                                            Sidebar</a></li>
-                                                    <li><a class="dropdown-item"
-                                                            href="page-left-and-right-sidebars.html">Left and Right
-                                                            Sidebars</a></li>
-                                                    <li><a class="dropdown-item" href="page-sticky-sidebar.html">Sticky
-                                                            Sidebar</a></li>
-                                                    <li><a class="dropdown-item"
-                                                            href="page-secondary-navbar.html">Secondary Navbar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown-submenu">
-                                                <a class="dropdown-item" href="#">Extra</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="page-404.html">404 Error</a></li>
-                                                    <li><a class="dropdown-item" href="page-500.html">500 Error</a></li>
-                                                    <li><a class="dropdown-item" href="page-coming-soon.html">Coming
-                                                            Soon</a></li>
-                                                    <li><a class="dropdown-item"
-                                                            href="page-maintenance-mode.html">Maintenance Mode</a></li>
-                                                    <li><a class="dropdown-item" href="page-search-results.html">Search
-                                                            Results</a></li>
-                                                    <li><a class="dropdown-item" href="sitemap.html">Sitemap</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown-submenu">
-                                                <a class="dropdown-item" href="#">Team</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="page-team-advanced.html">Team -
-                                                            Advanced</a></li>
-                                                    <li><a class="dropdown-item" href="page-team.html">Team - Basic</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown-submenu">
-                                                <a class="dropdown-item" href="#">Services</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="page-services.html">Services -
-                                                            Version 1</a></li>
-                                                    <li><a class="dropdown-item" href="page-services-2.html">Services -
-                                                            Version 2</a></li>
-                                                    <li><a class="dropdown-item" href="page-services-3.html">Services -
-                                                            Version 3</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a class="dropdown-item" href="page-custom-header.html">Custom
-                                                    Header</a></li>
-                                            <li><a class="dropdown-item" href="page-careers.html">Careers</a></li>
-                                            <li><a class="dropdown-item" href="page-faq.html">FAQ</a></li>
-                                            <li><a class="dropdown-item" href="page-login.html">Login / Register</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="page-user-profile.html">User Profile</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown dropdown-mega">
-                                        <a class="dropdown-item dropdown-toggle" href="#">
-                                            promotions
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <div class="dropdown-mega-content">
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <span class="dropdown-mega-sub-title">Top Promotions</span>
-                                                            <ul class="dropdown-mega-sub-nav">
-                                                                <li *ngFor="let promo of promotions">
-                                                                    <a class="dropdown-item"
-                                                                        href="elements-accordions.html">
-                                                                        {{promo.name}}
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown ms-lg-auto">
-                                        <a href="#" class="dropdown-item">
-                                            Outlet
-                                        </a>
-                                    </li>
+
                                 </ul>
                             </nav>
                         </div>
