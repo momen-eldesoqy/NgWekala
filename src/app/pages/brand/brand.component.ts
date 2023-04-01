@@ -15,11 +15,13 @@ export class BrandComponent {
 
   brand:IBrandDto = {id:0,name:"",description:"",products:[]};
   cartItems:Array<any> = [];
+  newl:any;
 
   constructor(private ac:ActivatedRoute , private _cartService:CartService , private brandServ:BrandService) {
       brandServ.getBrandById(ac.snapshot.params['id']).subscribe({
         next:(res)=>{
           this.brand = res ;
+          this.newl = this.brand.products;
         },
         error:(err)=>{
           console.log(err);

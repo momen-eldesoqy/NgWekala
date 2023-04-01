@@ -15,8 +15,25 @@ export class LoginGuard implements CanActivate {
 
     const token = localStorage.getItem("Token");
 
+
     if (token && !this.jwtHelper.isTokenExpired(token)) {
-      return true;
+
+      const decodedToken = this.jwtHelper.decodeToken(token);
+      const role = decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']
+      var allowedRoles = route.data['allowedRoles'];
+      console.log(allowedRoles)
+      console.log(role);
+      if(allowedRoles){
+        if(allowedRoles[0] == role){
+          return true;
+        }
+        else{
+          this.router.navigate(["home"]);
+          return false;
+        }
+      }else{
+        return true;
+      }
     }
     else{
       this.router.navigate(["login"]);

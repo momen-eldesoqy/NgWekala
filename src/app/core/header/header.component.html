@@ -1,43 +1,26 @@
 <header id="header">
 
     <div class="header-body header-body-bottom-border-fixed box-shadow-none border-top-0">
-
         <app-headtop></app-headtop>
-
         <div class="header-container container">
-
             <div class="header-row py-2">
-
                 <div class="header-column w-100">
-
                     <div class="header-row justify-content-between">
-
                         <div class="header-logo z-index-2 col-lg-2 px-0">
-
                             <a routerLink="/home">
-
                                 <img alt="Porto" width="100" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="84" src="./../../../assets/img/pngLogo.png">
-                                
                             </a>
                         </div>
                         <div class="header-nav-features header-nav-features-no-border col-lg-5 col-xl-6 px-0 ms-0">
-
                             <div class="header-nav-feature ps-lg-5 pe-lg-4">
-
                                 <form role="search" action="" method="get">
-
                                     <div class="search-with-select">
-
                                         <a href="#" class="mobile-search-toggle-btn me-2" data-porto-toggle-class="open">
                                             <i class="icons icon-magnifier text-color-dark text-color-hover-primary"></i>
                                         </a>
-
                                         <div class="search-form-wrapper input-group">
-
-                                            <input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="Search...">
-
+                                            <input class="form-control text-1" id="headerSearch" name="q" type="search" [(ngModel)]="searchBind" (keyup)="search($event)" placeholder="Search...">
                                             <div class="search-form-select-wrapper">
-
                                                 <div class="custom-select-1">
 
                                                     <select name="category" class="form-control form-select">
@@ -48,9 +31,7 @@
                                                         <option value="motors">Motors</option>
                                                         <option value="features">Features</option>
                                                     </select>
-
                                                 </div>
-
                                                 <button class="btn" type="submit">
                                                     <i class="icons icon-magnifier header-nav-top-icon text-color-dark"></i>
                                                 </button>

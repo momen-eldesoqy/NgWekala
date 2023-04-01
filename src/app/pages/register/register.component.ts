@@ -63,11 +63,12 @@ export class RegisterComponent {
 
   registerValue() {
     if(this.registerData.valid) {
-      console.log(this.registerData.value);
       this._HttpClient.post("https://localhost:7179/api/Account/register",this.registerData.value).subscribe({
         next:(resopnse)=>{
-          console.log(resopnse)
           this._Router.navigate(['login']);
+          console.log(resopnse)
+          console.log("resopnse")
+          
         },
         error:(error)=>{
           console.log(error)

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { IProduct } from 'src/app/_models/product';
 
 @Component({
@@ -22,7 +22,6 @@ export class ProductDetailsComponent implements OnInit {
     store_Id:0,
     storeName:""
   }
-
 
 
 

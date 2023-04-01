@@ -32,7 +32,17 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  
+  searchForProduct(str:string){
+    this._service.searchForProduct(str).subscribe({
+      next:(resopnse)=>{
+        console.log(resopnse)
+        this.Products = resopnse;
+      },
+      error:(error)=>{
+        console.log(error)
+      }
+    })
+  }
 
   addToCart(product:any,productImg:any){
 

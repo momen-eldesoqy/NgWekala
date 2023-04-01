@@ -5,11 +5,51 @@
 </div>
 <div class="row">
     <div class="col-md-5 mb-5 mb-md-0">
-        <app-slider></app-slider>
+        <!-- <app-slider></app-slider> -->
+        <div class="thumb-gallery-wrapper">
+
+            <div class="thumb-gallery-detail owl-carousel owl-theme manual nav-inside nav-style-1 nav-dark mb-3">
+                <div>
+                    <img alt="" class="img-fluid" [src]="productImg">
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="col-md-7">
-        <app-product-details [product]="product"></app-product-details>
+        <!-- <app-product-details [product]="product" ></app-product-details> -->
+        <div class="summary entry-summary position-relative">
+
+            <h1 class="mb-0 font-weight-bold text-7">{{product.name}}</h1>
+        
+            <div class="divider divider-small">
+                <hr class="bg-color-grey-scale-4">
+            </div>
+        
+            <p class="price mb-3">
+                <span class="sale text-color-dark">${{product.newPrice ? product.newPrice :product.price }}</span>
+                <span *ngIf="product.newPrice" class="amount">${{product.price}}</span>
+            </p>
+        
+            <p class="text-3-5 mb-3">{{product.description}}</p>
+        
+            <ul class="list list-unstyled text-2">
+                <li class="mb-0">AVAILABILITY: <strong class="text-color-dark"> {{product.quantity}} AVAILABLE</strong></li>
+                <!-- <li class="mb-0">SKU: <strong class="text-color-dark">1234567890</strong></li> -->
+            </ul>
+        
+        
+            <form enctype="multipart/form-data" method="post" class="cart">
+                <hr>
+                <div class="quantity quantity-lg">
+                    <input type="button" class="minus text-color-hover-light bg-color-hover-primary border-color-hover-primary" (click)="decreaseQuantity()" value="-">
+                    <input type="number" class="input-text qty text" title="Qty" [(ngModel)]="bind" name="quantity" min="1" step="1">
+                    <input type="button" class="plus text-color-hover-light bg-color-hover-primary border-color-hover-primary" (click)="increaseQuantity()" value="+">
+                </div>
+                <button type="submit" class="btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary" (click)="addToCart()">Add to cart</button>
+                <hr>
+            </form>
+        </div>
     </div>
 </div>
 

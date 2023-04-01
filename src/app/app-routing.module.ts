@@ -44,7 +44,6 @@ const routes : Routes = [
       {path:"store/:id",component : StoreComponent },
       {path:"brand/:id",component : BrandComponent },
       {path:"register",component : RegisterComponent },
-      {path:"**",component : NotfoundComponent },
       {path:"cart",component : CartComponent},
       {path:"checkout",component: CheckoutComponent,canActivate:[LoginGuard]},
       {path:"order",component: OrderCompletedComponent,canActivate:[LoginGuard]}
@@ -54,6 +53,7 @@ const routes : Routes = [
     path:"admin",
     component:AdminComponent,
     children:[
+      {path:"" , redirectTo:"products" , pathMatch:"full"},
       {path:"products",component:AdminProductsComponent},
       {path:"orders",component:AdminOrdersComponent},
       {path:"products/create",component:AdminCreateProductComponent},
@@ -74,8 +74,10 @@ const routes : Routes = [
       {path:"categories/create",component:AdminCreateCategoryComponent},
       {path:"categories/edit/:id",component:AdminEditCategoryComponent},
 
-    ],canActivate:[LoginGuard]
-  },
+    ],canActivate:[LoginGuard],
+    data:{allowedRoles:['Admin']}
+  },{path:"**",component:NotfoundComponent}
+  
 ]
 
 

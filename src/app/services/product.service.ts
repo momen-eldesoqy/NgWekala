@@ -45,4 +45,8 @@ export class ProductService {
   getProductImages(id:number):Observable<any>{
     return this._HttpClient.get(`https://localhost:7179/api/Product/image/${id}`)
   }
+
+  searchForProduct(searchStr:string):Observable<any>{
+    return this._HttpClient.get(`https://localhost:7179/api/Product/Pagination?Search=${searchStr}`)
+  }
 }
